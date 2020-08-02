@@ -59,29 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ReorderableListView(
-        children: <Widget>[
-          for (final course in _courses)
-            ListTile(
-              key: ValueKey(course),
-              leading: Image(
-                image: AssetImage(course.imageLocation),
-                fit: BoxFit.cover,
-              ),
-              title: Text(course.name),
-            )
-        ],
-        onReorder: (int oldIndex, int newIndex) {
-          setState(() {
-            if (newIndex > oldIndex) {
-              newIndex -= 1;
-            }
-
-            final item = _courses.removeAt(oldIndex);
-            _courses.insert(newIndex, item);
-          });
-        },
-      ),
+      body: Container(),
     );
   }
 }
